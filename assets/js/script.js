@@ -26,3 +26,34 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+// Create array of letters that logs a random letter
+var alpha = "abcdefghijklmnopqrstuvwxyz";
+var alphaArray = alpha.split("");
+
+var randomLetter = alphaArray[Math.floor(Math.random() * alphaArray.length)];
+
+console.log(randomLetter);
+
+// Random Uppercase letter generator
+var randomUpperCase = randomLetter.toUpperCase();
+console.log(randomUpperCase);
+
+// Random number generator
+var num = "0123456789";
+var numArray = num.split("");
+
+var randomNum = numArray[Math.floor(Math.random() * numArray.length)];
+
+console.log(randomNum);
+
+// Random Special Character Generator
+var special = "!#$%&'()*+,-./:;<=>?@[]^_`{|}";
+var specialArray = special.split("");
+
+var randomSpecial = specialArray[Math.floor(Math.random() * specialArray.length)];
+
+console.log(randomSpecial);
+
+var char = window.prompt("How many characters would you like the password to be?");
