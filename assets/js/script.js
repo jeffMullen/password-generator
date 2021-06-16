@@ -15,6 +15,11 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// Prompt String Variables
+var lowercase = "Would you like to use lowercase letters?";
+var uppercase = "Would you like to use uppercase letters?";
+var specialQuestion = "Would you like to use special characters?";
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -56,4 +61,21 @@ var randomSpecial = specialArray[Math.floor(Math.random() * specialArray.length)
 
 console.log(randomSpecial);
 
-var char = window.prompt("How many characters would you like the password to be?");
+// var char = window.prompt("How many characters would you like the password to be?");
+
+var passwordCredentials = {};
+
+function validate(boolean) {
+  return boolean;
+}
+
+function setCredentials() {
+  var input = confirm(prompt(lowercase));
+
+  if (validate(true)) {
+    passwordCredentials.lowercase = alphaArray;
+  }
+}
+
+setCredentials();
+console.log(passwordCredentials);
