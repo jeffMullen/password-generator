@@ -42,6 +42,11 @@ var randomLetter = alphaArray[Math.floor(Math.random() * alphaArray.length)];
 console.log(randomLetter);
 
 // Random Uppercase letter generator
+var alphaUppercase = alpha.toUpperCase();
+var alphaArrayUppercase = alphaUppercase.split("");
+
+console.log(alphaArrayUppercase);
+
 var randomUpperCase = randomLetter.toUpperCase();
 console.log(randomUpperCase);
 
@@ -61,15 +66,15 @@ var randomSpecial = specialArray[Math.floor(Math.random() * specialArray.length)
 
 console.log(randomSpecial);
 
-// var char = window.prompt("How many characters would you like the password to be?");
-
+// Object to store validation data
 var passwordCredentials = {};
 
+// Validate Lowercase letters
 function validate(boolean) {
   return boolean;
 }
 
-function setCredentials() {
+function setLowercase() {
   var input = confirm(prompt(lowercase));
 
   if (validate(true)) {
@@ -77,5 +82,22 @@ function setCredentials() {
   }
 }
 
-setCredentials();
+setLowercase();
+console.log(passwordCredentials);
+
+
+// Validate Uppercase Letters
+function validateUpper(boolean) {
+  return boolean;
+}
+
+function setUppercase() {
+  var input = confirm(prompt(uppercase));
+
+  if (validateUpper(true)) {
+    passwordCredentials.uppercase = alphaArrayUppercase;
+  }
+}
+
+setUppercase();
 console.log(passwordCredentials);
