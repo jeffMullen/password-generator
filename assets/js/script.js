@@ -18,6 +18,7 @@ var generateBtn = document.querySelector("#generate");
 // Prompt String Variables
 var lowercase = "Would you like to use lowercase letters?";
 var uppercase = "Would you like to use uppercase letters?";
+var numQuestion = "Would you like to use numbers?"
 var specialQuestion = "Would you like to use special characters?";
 
 // Write password to the #password input
@@ -67,21 +68,28 @@ console.log(randomSpecial);
 // Object to store validation data
 var passwordCredentials = {};
 
-// Validate Lowercase letters and send array to passwordCredentials
+// VALIDATE Lowercase letters and send array to passwordCredentials
 var lowercaseValid = confirm(lowercase);
 
 if (lowercaseValid === true) {
   passwordCredentials.lowercase = alphaArray;
 }
 
-// Validate UPPERCASE letters and send array to passwordCredentials
+// VALIDATE UPPERCASE letters and send array to passwordCredentials
 var uppercaseValid = confirm(uppercase);
 
 if (uppercaseValid === true) {
   passwordCredentials.uppercase = alphaArrayUppercase;
 }
 
-// Validate Special Characters and send array to passwordCredentials
+// VALIDATE numbers and send array to passwordCredentials
+var numValid = confirm(numQuestion);
+
+if (numValid === true) {
+  passwordCredentials.numbers = numArray;
+}
+
+// VALIDATE Special Characters and send array to passwordCredentials
 var specialValid = confirm(specialQuestion);
 
 if (specialValid === true) {
