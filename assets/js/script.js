@@ -46,7 +46,8 @@ console.log(randomLetter);
 var alphaUppercase = alpha.toUpperCase();
 var alphaArrayUppercase = alphaUppercase.split("");
 
-var randomUpperCase = randomLetter.toUpperCase();
+var randomUpperCase = alphaArrayUppercase[Math.floor(Math.random() * alphaArrayUppercase.length)];
+
 console.log(randomUpperCase);
 
 // Random number generator
