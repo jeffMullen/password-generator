@@ -45,8 +45,6 @@ console.log(randomLetter);
 var alphaUppercase = alpha.toUpperCase();
 var alphaArrayUppercase = alphaUppercase.split("");
 
-console.log(alphaArrayUppercase);
-
 var randomUpperCase = randomLetter.toUpperCase();
 console.log(randomUpperCase);
 
@@ -70,19 +68,24 @@ console.log(randomSpecial);
 var passwordCredentials = {};
 
 // Validate Lowercase letters and send array to passwordCredentials
-var lowercaseAnswer = confirm(lowercase);
+var lowercaseValid = confirm(lowercase);
 
-if (lowercaseAnswer === true) {
+if (lowercaseValid === true) {
   passwordCredentials.lowercase = alphaArray;
 }
 
-console.log(lowercaseAnswer);
+// Validate UPPERCASE letters and send array to passwordCredentials
+var uppercaseValid = confirm(uppercase);
 
-//Validate UPPERCASE letters and send array to passwordCredentials
-var uppercaseAnswer = confirm(uppercase);
-
-if (uppercaseAnswer === true) {
+if (uppercaseValid === true) {
   passwordCredentials.uppercase = alphaArrayUppercase;
+}
+
+// Validate Special Characters and send array to passwordCredentials
+var specialValid = confirm(specialQuestion);
+
+if (specialValid === true) {
+  passwordCredentials.special = specialArray;
 }
 
 console.log(passwordCredentials);
