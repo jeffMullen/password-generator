@@ -69,35 +69,20 @@ console.log(randomSpecial);
 // Object to store validation data
 var passwordCredentials = {};
 
-// Validate Lowercase letters
-function validate(boolean) {
-  return boolean;
+// Validate Lowercase letters and send array to passwordCredentials
+var lowercaseAnswer = confirm(lowercase);
+
+if (lowercaseAnswer === true) {
+  passwordCredentials.lowercase = alphaArray;
 }
 
-function setLowercase() {
-  var input = confirm(prompt(lowercase));
+console.log(lowercaseAnswer);
 
-  if (validate(true)) {
-    passwordCredentials.lowercase = alphaArray;
-  }
+//Validate UPPERCASE letters and send array to passwordCredentials
+var uppercaseAnswer = confirm(uppercase);
+
+if (uppercaseAnswer === true) {
+  passwordCredentials.uppercase = alphaArrayUppercase;
 }
 
-setLowercase();
-console.log(passwordCredentials);
-
-
-// Validate Uppercase Letters
-function validateUpper(boolean) {
-  return boolean;
-}
-
-function setUppercase() {
-  var input = confirm(prompt(uppercase));
-
-  if (validateUpper(true)) {
-    passwordCredentials.uppercase = alphaArrayUppercase;
-  }
-}
-
-setUppercase();
 console.log(passwordCredentials);
