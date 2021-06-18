@@ -15,6 +15,18 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
 // Prompt String Variables
 var lowercase = "Would you like to use lowercase letters?";
 var uppercase = "Would you like to use uppercase letters?";
@@ -53,17 +65,6 @@ var randomSpecial = specialArray[Math.floor(Math.random() * specialArray.length)
 
 console.log(randomSpecial);
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 
 
 // Object to store validation data
