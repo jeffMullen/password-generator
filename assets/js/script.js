@@ -27,52 +27,52 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-// Prompt String Variables
-var lowercase = "Would you like to use lowercase letters?";
-var uppercase = "Would you like to use uppercase letters?";
-var numQuestion = "Would you like to use numbers?"
-var specialQuestion = "Would you like to use special characters?";
+// // Prompt String Variables
+// var lowercase = "Would you like to use lowercase letters?";
+// var uppercase = "Would you like to use uppercase letters?";
+// var numQuestion = "Would you like to use numbers?"
+// var specialQuestion = "Would you like to use special characters?";
 
-// Random letter generator
-var alpha = "abcdefghijklmnopqrstuvwxyz";
-var alphaArray = alpha.split("");
+// // Random letter generator
+// var alpha = "abcdefghijklmnopqrstuvwxyz";
+// var alphaArray = alpha.split("");
 
-var randomLetter = alphaArray[Math.floor(Math.random() * alphaArray.length)];
+// var randomLetter = alphaArray[Math.floor(Math.random() * alphaArray.length)];
 
-console.log(randomLetter);
+// console.log(randomLetter);
 
-// Random Uppercase letter generator
-var alphaUppercase = alpha.toUpperCase();
-var alphaArrayUppercase = alphaUppercase.split("");
+// // Random Uppercase letter generator
+// var alphaUppercase = alpha.toUpperCase();
+// var alphaArrayUppercase = alphaUppercase.split("");
 
-var randomUpperCase = alphaArrayUppercase[Math.floor(Math.random() * alphaArrayUppercase.length)];
+// var randomUpperCase = alphaArrayUppercase[Math.floor(Math.random() * alphaArrayUppercase.length)];
 
-console.log(randomUpperCase);
+// console.log(randomUpperCase);
 
-// Random number generator
-var num = "0123456789";
-var numArray = num.split("");
+// // Random number generator
+// var num = "0123456789";
+// var numArray = num.split("");
 
-var randomNum = numArray[Math.floor(Math.random() * numArray.length)];
+// var randomNum = numArray[Math.floor(Math.random() * numArray.length)];
 
-console.log(randomNum);
+// console.log(randomNum);
 
-// Random Special Character Generator
-var special = "!#$%&'()*+,-./:;<=>?@[]^_`{|}";
-var specialArray = special.split("");
+// // Random Special Character Generator
+// var special = "!#$%&'()*+,-./:;<=>?@[]^_`{|}";
+// var specialArray = special.split("");
 
-var randomSpecial = specialArray[Math.floor(Math.random() * specialArray.length)];
+// var randomSpecial = specialArray[Math.floor(Math.random() * specialArray.length)];
 
-console.log(randomSpecial);
+// console.log(randomSpecial);
 
 
 
-// Object to store validation data
-var passwordCredentials = {};
+// // Object to store validation data
+// var passwordCredentials = {};
 
 
 // Ask User for Criteria
-function criteria() {
+function generatePassword() {
   var numCharacters = window.prompt("Choose a password length between 8 and 128 characters.");
 
   // while (numCharacters !== parseInt(numCharacters)) {
@@ -86,51 +86,55 @@ function criteria() {
   //   }
   // }
   // passwordCredentials.characters = numCharacters;
+  console.log("numCharacters ", numCharacters);
+  console.log(typeof parseInt(numCharacters));
 
-  if (numCharacters !== parseInt(numCharacters)) {
+
+
+
+
+  while (isNaN(parseInt(numCharacters))) {
     alert("Entry must be a number");
     numCharacters = window.prompt("Choose a password length between 8 and 128 characters.");
-
-    if ((numCharacters < 8 || numCharacters > 128)) {
-      numCharacters = parseInt(window.prompt("Invalid Entry" + "\nPassword must be at least 8 characters, and no more than 128 characters."));
-
-      passwordCredentials.characters = numCharacters;
-    }
-    passwordCredentials.characters = parseInt(numCharacters);
   }
 
-  // VALIDATE Lowercase letters and send array to passwordCredentials
-  var lowercaseValid = confirm(lowercase);
 
-  if (lowercaseValid === true) {
-    passwordCredentials.lowercase = alphaArray;
-
-    // VALIDATE UPPERCASE letters and send array to passwordCredentials
-    var uppercaseValid = confirm(uppercase);
-
-    if (uppercaseValid === true) {
-      passwordCredentials.uppercase = alphaArrayUppercase;
-    }
-
-    // VALIDATE numbers and send array to passwordCredentials
-    var numValid = confirm(numQuestion);
-
-    if (numValid === true) {
-      passwordCredentials.numbers = numArray;
-    }
-
-    // VALIDATE Special Characters and send array to passwordCredentials
-    var specialValid = confirm(specialQuestion);
-
-    if (specialValid === true) {
-      passwordCredentials.special = specialArray;
-    }
-
-    console.log(passwordCredentials);
+  while ((numCharacters < 8 || numCharacters > 128)) {
+    alert("Invalid Entry" + "\nPassword must be at least 8 characters, and no more than 128 characters.")
+    numCharacters = window.prompt("Choose a password length between 8 and 128 characters.");
   }
+
+
+  // // VALIDATE Lowercase letters and send array to passwordCredentials
+  // var lowercaseValid = confirm(lowercase);
+
+  // if (lowercaseValid === true) {
+  //   passwordCredentials.lowercase = alphaArray;
+  // }
+
+  // // VALIDATE UPPERCASE letters and send array to passwordCredentials
+  // var uppercaseValid = confirm(uppercase);
+
+  // if (uppercaseValid === true) {
+  //   passwordCredentials.uppercase = alphaArrayUppercase;
+  // }
+
+  // // VALIDATE numbers and send array to passwordCredentials
+  // var numValid = confirm(numQuestion);
+
+  // if (numValid === true) {
+  //   passwordCredentials.numbers = numArray;
+  // }
+
+  // // VALIDATE Special Characters and send array to passwordCredentials
+  // var specialValid = confirm(specialQuestion);
+
+  // if (specialValid === true) {
+  //   passwordCredentials.special = specialArray;
+  // }
+
+  // console.log(passwordCredentials);
 }
-
-criteria();
 
 
 
