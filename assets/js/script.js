@@ -33,8 +33,41 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+// Object to store validation data
+var passwordCredentials = {};
 
-// Create array of letters that logs a random letter
+// Ask User for Criteria
+function criteria() {
+  var numCharacters = window.prompt("Choose a password length between 8 and 128 characters.");
+
+  // while (numCharacters !== parseInt(numCharacters)) {
+  //   alert("Entry must be a number");
+  //   numCharacters = window.prompt("Choose a password length between 8 and 128 characters.")
+  // }
+
+  // while ((numCharacters < 8) || (numCharacters > 128)) {
+  //   if (numCharacters < 8 || numCharacters > 128) {
+  //     numCharacters = parseInt(window.prompt("Invalid Entry" + "\nPassword must be at least 8 characters, and no more than 128 characters."))
+  //   }
+  // }
+  // passwordCredentials.characters = numCharacters;
+
+  if (numCharacters !== parseInt(numCharacters)) {
+    alert("Entry must be a number");
+    numCharacters = window.prompt("Choose a password length between 8 and 128 characters.");
+
+    if ((numCharacters < 8 || numCharacters > 128)) {
+      numCharacters = parseInt(window.prompt("Invalid Entry" + "\nPassword must be at least 8 characters, and no more than 128 characters."));
+
+      passwordCredentials.characters = numCharacters;
+    }
+  }
+}
+
+criteria();
+
+
+// Random letter generator
 var alpha = "abcdefghijklmnopqrstuvwxyz";
 var alphaArray = alpha.split("");
 
@@ -65,9 +98,6 @@ var specialArray = special.split("");
 var randomSpecial = specialArray[Math.floor(Math.random() * specialArray.length)];
 
 console.log(randomSpecial);
-
-// Object to store validation data
-var passwordCredentials = {};
 
 // VALIDATE Lowercase letters and send array to passwordCredentials
 var lowercaseValid = confirm(lowercase);
