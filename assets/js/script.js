@@ -130,24 +130,26 @@ function generatePassword() {
   }
 
   console.log(passwordCredentials);
-
+  debugger;
   // Makes sure all characters are represented in password when ALL options are true
-  if (lowercaseValid && uppercaseValid && numValid && specialValid) {
-    var password = "";
+  // if (lowercaseValid && uppercaseValid && numValid && specialValid) {
 
-    password = alphaArray[Math.floor(Math.random() * alphaArray.length)] + alphaArrayUppercase[Math.floor(Math.random() * alphaArrayUppercase.length)] + numArray[Math.floor(Math.random() * numArray.length)] + specialArray[Math.floor(Math.random() * specialArray.length)];
+  //   var password = alphaArray[Math.floor(Math.random() * alphaArray.length)] + alphaArrayUppercase[Math.floor(Math.random() * alphaArrayUppercase.length)] + numArray[Math.floor(Math.random() * numArray.length)] + specialArray[Math.floor(Math.random() * specialArray.length)];
 
-    console.log(password);
+  //   console.log(password);
 
-    for (let i = 0; i < (numCharacters - 4); i++) {
-      var randomNum = passwordCredentials[Math.floor(Math.random() * passwordCredentials.length)];
-      password = password + randomNum;
-    }
+  //   for (let i = 0; i < (numCharacters - 4); i++) {
+  //     var randomSelection = passwordCredentials[Math.floor(Math.random() * passwordCredentials.length)];
+  //     password = password + randomSelection;
 
-    return password;
-  }
+  //   }
+
+  //   console.log(password);
+
+  //   return password;
+  // }
 }
 
 
-
+// for loop that iterates through password credentials index and selects a random character from that index. Then loop with condition (numCharacters - passwordCredentials.length)
 
