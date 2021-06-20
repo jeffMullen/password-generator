@@ -22,6 +22,8 @@ function writePassword() {
 
   passwordText.value = password;
 
+  passwordCredentials.length = 0;
+  console.log(passwordCredentials);
 }
 
 // Add event listener to generate button
@@ -137,7 +139,6 @@ function generatePassword() {
   }
 
   return password;
-
 }
 
 
