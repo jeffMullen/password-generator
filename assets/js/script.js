@@ -131,14 +131,21 @@ function generatePassword() {
 
   console.log(passwordCredentials);
 
-  var password = "";
+  // Makes sure all characters are represented in password when ALL options are true
+  if (lowercaseValid && uppercaseValid && numValid && specialValid) {
+    var password = "";
 
-  for (let i = 0; i < numCharacters; i++) {
-    var randomNum = passwordCredentials[Math.floor(Math.random() * passwordCredentials.length)];
-    password = password + randomNum
+    password = alphaArray[Math.floor(Math.random() * alphaArray.length)] + alphaArrayUppercase[Math.floor(Math.random() * alphaArrayUppercase.length)] + numArray[Math.floor(Math.random() * numArray.length)] + specialArray[Math.floor(Math.random() * specialArray.length)];
+
+    console.log(password);
+
+    for (let i = 0; i < numCharacters; i++) {
+      var randomNum = passwordCredentials[Math.floor(Math.random() * passwordCredentials.length)];
+      password = password + randomNum
+    }
+
+    return password;
   }
-
-  return password;
 }
 
 
