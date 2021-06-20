@@ -139,9 +139,9 @@ function generatePassword() {
 
     console.log(password);
 
-    for (let i = 0; i < numCharacters; i++) {
+    for (let i = 0; i < (numCharacters - 4); i++) {
       var randomNum = passwordCredentials[Math.floor(Math.random() * passwordCredentials.length)];
-      password = password + randomNum
+      password = password + randomNum;
     }
 
     return password;
