@@ -67,21 +67,14 @@ function generatePassword() {
     numCharacters = window.prompt("Choose a password length between 8 and 128 characters.");
   }
 
+  // CHARACTER TYPE yes or no
+  var lowercaseValid = confirm(lowercase);
 
+  var uppercaseValid = confirm(uppercase);
 
-  if (numCharacters >= 8 && numCharacters <= 128) {
-    // // VALIDATE Lowercase letters and send array to passwordCredentials
-    var lowercaseValid = confirm(lowercase);
+  var numValid = confirm(numQuestion);
 
-    // // VALIDATE UPPERCASE letters and send array to passwordCredentials
-    var uppercaseValid = confirm(uppercase);
-
-    // // VALIDATE numbers and send array to passwordCredentials
-    var numValid = confirm(numQuestion);
-
-    // // VALIDATE Special Characters and send array to passwordCredentials
-    var specialValid = confirm(specialQuestion);
-  }
+  var specialValid = confirm(specialQuestion);
 
   // Requires user to choose at least one character type
   if ((lowercaseValid || uppercaseValid || numValid || specialValid) === false) {
