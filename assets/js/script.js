@@ -109,7 +109,7 @@ function generatePassword() {
     var specialValid = confirm(specialQuestion);
   }
 
-  // Alert user that they MUST choose a character type
+  // Requires user to choose at least one character type
   if ((lowercaseValid && uppercaseValid && numValid && specialValid) === false) {
     alert("Must choose at least one character type.");
     var lowercaseValid = confirm(lowercase);
@@ -118,28 +118,25 @@ function generatePassword() {
     var specialValid = confirm(specialQuestion);
   }
 
+  // Character types added to passwordCredentials array
   if (lowercaseValid) {
     passwordCredentials = passwordCredentials.concat(alphaArray);
   }
 
-
-
-  if (uppercaseValid === true) {
+  if (uppercaseValid) {
     passwordCredentials = passwordCredentials.concat(alphaArrayUppercase);
   }
 
-
-
-  if (numValid === true) {
+  if (numValid) {
     passwordCredentials = passwordCredentials.concat(numArray);
   }
 
-
-  if (specialValid === true) {
+  if (specialValid) {
     passwordCredentials = passwordCredentials.concat(specialArray);
   }
 
   console.log(passwordCredentials);
+
 
 
 
