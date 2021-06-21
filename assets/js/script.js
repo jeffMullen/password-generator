@@ -265,6 +265,20 @@ function generatePassword() {
     return password;
   }
 
+  // Representation of upper, number, and special characters
+  if (!lowercaseValid && uppercaseValid && numValid && specialValid) {
+    var password = alphaArrayUppercase[Math.floor(Math.random() * alphaArrayUppercase.length)] + numArray[Math.floor(Math.random() * numArray.length)] + specialArray[Math.floor(Math.random() * specialArray.length)];
+
+    for (let i = 0; i < (numCharacters - 3); i++) {
+      var randomSelection = passwordCredentials[Math.floor(Math.random() * passwordCredentials.length)];
+      password = password + randomSelection;
+    }
+
+    console.log(password);
+
+    return password;
+  }
+
 
   // Makes sure all characters are represented in password when ALL options are true
   if (lowercaseValid && uppercaseValid && numValid && specialValid) {
