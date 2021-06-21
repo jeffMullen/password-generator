@@ -279,7 +279,7 @@ function generatePassword() {
     return password;
   }
 
-
+  // COMBINATION OF ALL 4 CHARACTER TYPES **********************
   // Makes sure all characters are represented in password when ALL options are true
   if (lowercaseValid && uppercaseValid && numValid && specialValid) {
 
@@ -297,8 +297,19 @@ function generatePassword() {
 
     return password;
   }
+  // If only one character type is selected
+  else {
+    var password = "";
+
+    for (let i = 0; i < (numCharacters); i++) {
+      var randomSelection = passwordCredentials[Math.floor(Math.random() * passwordCredentials.length)];
+      var password = password + randomSelection;
+
+    }
+
+    console.log(password);
+
+    return password;
+  }
+
 }
-
-
-// for loop that iterates through password credentials index and selects a random character from that index. Then loop with condition (numCharacters - passwordCredentials.length)
-
