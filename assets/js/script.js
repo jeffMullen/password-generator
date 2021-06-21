@@ -87,26 +87,36 @@ function generatePassword() {
     numCharacters = window.prompt("Choose a password length between 8 and 128 characters.");
   }
 
-  //check that number < 8 | < 128
+  //check that number > 8 | < 128
   while ((numCharacters < 8 || numCharacters > 128)) {
-    alert("Invalid Entry" + "\nPassword must be at least 8 characters, and no more than 128 characters.")
+    alert("Invalid Entry" + "\nPassword must be at least 8 characters, and no more than 128 characters.");
     numCharacters = window.prompt("Choose a password length between 8 and 128 characters.");
   }
 
 
 
+  if (numCharacters >= 8 && numCharacters <= 128) {
+    // // VALIDATE Lowercase letters and send array to passwordCredentials
+    var lowercaseValid = confirm(lowercase);
 
-  // // VALIDATE Lowercase letters and send array to passwordCredentials
-  var lowercaseValid = confirm(lowercase);
+    // // VALIDATE UPPERCASE letters and send array to passwordCredentials
+    var uppercaseValid = confirm(uppercase);
 
-  // // VALIDATE UPPERCASE letters and send array to passwordCredentials
-  var uppercaseValid = confirm(uppercase);
+    // // VALIDATE numbers and send array to passwordCredentials
+    var numValid = confirm(numQuestion);
 
-  // // VALIDATE numbers and send array to passwordCredentials
-  var numValid = confirm(numQuestion);
+    // // VALIDATE Special Characters and send array to passwordCredentials
+    var specialValid = confirm(specialQuestion);
+  }
 
-  // // VALIDATE Special Characters and send array to passwordCredentials
-  var specialValid = confirm(specialQuestion);
+  // Alert user that they MUST choose a character type
+  if ((lowercaseValid && uppercaseValid && numValid && specialValid) === false) {
+    alert("Must choose at least one character type.");
+    var lowercaseValid = confirm(lowercase);
+    var uppercaseValid = confirm(uppercase);
+    var numValid = confirm(numQuestion);
+    var specialValid = confirm(specialQuestion);
+  }
 
   if (lowercaseValid) {
     passwordCredentials = passwordCredentials.concat(alphaArray);
@@ -130,24 +140,26 @@ function generatePassword() {
   }
 
   console.log(passwordCredentials);
-  debugger;
+
+
+
   // Makes sure all characters are represented in password when ALL options are true
-  // if (lowercaseValid && uppercaseValid && numValid && specialValid) {
+  if (lowercaseValid && uppercaseValid && numValid && specialValid) {
 
-  //   var password = alphaArray[Math.floor(Math.random() * alphaArray.length)] + alphaArrayUppercase[Math.floor(Math.random() * alphaArrayUppercase.length)] + numArray[Math.floor(Math.random() * numArray.length)] + specialArray[Math.floor(Math.random() * specialArray.length)];
+    var password = alphaArray[Math.floor(Math.random() * alphaArray.length)] + alphaArrayUppercase[Math.floor(Math.random() * alphaArrayUppercase.length)] + numArray[Math.floor(Math.random() * numArray.length)] + specialArray[Math.floor(Math.random() * specialArray.length)];
 
-  //   console.log(password);
+    console.log(password);
 
-  //   for (let i = 0; i < (numCharacters - 4); i++) {
-  //     var randomSelection = passwordCredentials[Math.floor(Math.random() * passwordCredentials.length)];
-  //     password = password + randomSelection;
+    for (let i = 0; i < (numCharacters - 4); i++) {
+      var randomSelection = passwordCredentials[Math.floor(Math.random() * passwordCredentials.length)];
+      password = password + randomSelection;
 
-  //   }
+    }
 
-  //   console.log(password);
+    console.log(password);
 
-  //   return password;
-  // }
+    return password;
+  }
 }
 
 
