@@ -23,7 +23,6 @@ function writePassword() {
   passwordText.value = password;
 
   passwordCredentials.length = 0;
-  console.log(passwordCredentials);
 }
 
 // Add event listener to generate button
@@ -102,8 +101,6 @@ function generatePassword() {
     passwordCredentials = passwordCredentials.concat(specialArray);
   }
 
-  console.log(passwordCredentials);
-
   // COMBINATIONS OF 2 CHARACTER TYPES **********************
   // Representation of lowercase and uppercase characters
   if (lowercaseValid && uppercaseValid && !numValid && !specialValid) {
@@ -113,8 +110,6 @@ function generatePassword() {
       var randomSelection = passwordCredentials[Math.floor(Math.random() * passwordCredentials.length)];
       password = password + randomSelection;
     }
-
-    console.log(password);
 
     return password;
   }
@@ -128,8 +123,6 @@ function generatePassword() {
       password = password + randomSelection;
     }
 
-    console.log(password);
-
     return password;
   }
 
@@ -141,8 +134,6 @@ function generatePassword() {
       var randomSelection = passwordCredentials[Math.floor(Math.random() * passwordCredentials.length)];
       password = password + randomSelection;
     }
-
-    console.log(password);
 
     return password;
   }
@@ -156,8 +147,6 @@ function generatePassword() {
       password = password + randomSelection;
     }
 
-    console.log(password);
-
     return password;
   }
 
@@ -170,8 +159,6 @@ function generatePassword() {
       password = password + randomSelection;
     }
 
-    console.log(password);
-
     return password;
   }
 
@@ -183,8 +170,6 @@ function generatePassword() {
       var randomSelection = passwordCredentials[Math.floor(Math.random() * passwordCredentials.length)];
       password = password + randomSelection;
     }
-
-    console.log(password);
 
     return password;
   }
@@ -199,8 +184,6 @@ function generatePassword() {
       password = password + randomSelection;
     }
 
-    console.log(password);
-
     return password;
   }
 
@@ -212,8 +195,6 @@ function generatePassword() {
       var randomSelection = passwordCredentials[Math.floor(Math.random() * passwordCredentials.length)];
       password = password + randomSelection;
     }
-
-    console.log(password);
 
     return password;
   }
@@ -227,8 +208,6 @@ function generatePassword() {
       password = password + randomSelection;
     }
 
-    console.log(password);
-
     return password;
   }
 
@@ -241,8 +220,6 @@ function generatePassword() {
       password = password + randomSelection;
     }
 
-    console.log(password);
-
     return password;
   }
 
@@ -252,18 +229,14 @@ function generatePassword() {
 
     var password = alphaArray[Math.floor(Math.random() * alphaArray.length)] + alphaArrayUppercase[Math.floor(Math.random() * alphaArrayUppercase.length)] + numArray[Math.floor(Math.random() * numArray.length)] + specialArray[Math.floor(Math.random() * specialArray.length)];
 
-    console.log(password);
-
     for (let i = 0; i < (numCharacters - 4); i++) {
       var randomSelection = passwordCredentials[Math.floor(Math.random() * passwordCredentials.length)];
       password = password + randomSelection;
-
     }
-
-    console.log(password);
 
     return password;
   }
+
   // If only one character type is selected
   else {
     var password = "";
@@ -271,12 +244,8 @@ function generatePassword() {
     for (let i = 0; i < (numCharacters); i++) {
       var randomSelection = passwordCredentials[Math.floor(Math.random() * passwordCredentials.length)];
       var password = password + randomSelection;
-
     }
-
-    console.log(password);
 
     return password;
   }
-
 }
