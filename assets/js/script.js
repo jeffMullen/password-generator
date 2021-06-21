@@ -110,7 +110,7 @@ function generatePassword() {
   }
 
   // Requires user to choose at least one character type
-  if ((lowercaseValid && uppercaseValid && numValid && specialValid) === false) {
+  if ((lowercaseValid || uppercaseValid || numValid || specialValid) === false) {
     alert("Must choose at least one character type.");
     var lowercaseValid = confirm(lowercase);
     var uppercaseValid = confirm(uppercase);
@@ -137,7 +137,19 @@ function generatePassword() {
 
   console.log(passwordCredentials);
 
+  // Representation of lower and uppercase characters
+  if (lowercaseValid && uppercaseValid && !numValid && !specialValid) {
+    var password = alphaArray[Math.floor(Math.random() * alphaArray.length)] + alphaArrayUppercase[Math.floor(Math.random() * alphaArrayUppercase.length)];
 
+    for (let i = 0; i < (numCharacters - 2); i++) {
+      var randomSelection = passwordCredentials[Math.floor(Math.random() * passwordCredentials.length)];
+      password = password + randomSelection;
+    }
+
+    console.log(password);
+
+    return password;
+  }
 
 
   // Makes sure all characters are represented in password when ALL options are true
