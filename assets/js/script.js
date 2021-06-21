@@ -35,59 +35,33 @@ var uppercase = "Would you like to use uppercase letters?";
 var numQuestion = "Would you like to use numbers?"
 var specialQuestion = "Would you like to use special characters?";
 
-// // Random letter generator
+// Arrays for each character type
 var alpha = "abcdefghijklmnopqrstuvwxyz";
 var alphaArray = alpha.split("");
 
-// var randomLetter = alphaArray[Math.floor(Math.random() * alphaArray.length)];
-
-// console.log(randomLetter);
-
-// // Random Uppercase letter generator
 var alphaUppercase = alpha.toUpperCase();
 var alphaArrayUppercase = alphaUppercase.split("");
 
-// var randomUpperCase = alphaArrayUppercase[Math.floor(Math.random() * alphaArrayUppercase.length)];
-
-// console.log(randomUpperCase);
-
-// // Random number generator
 var num = "0123456789";
 var numArray = num.split("");
 
-// var randomNum = numArray[Math.floor(Math.random() * numArray.length)];
-
-// console.log(randomNum);
-
-// // Random Special Character Generator
 var special = "!#$%&'()*+,-./:;<=>?@[]^_`{|}";
 var specialArray = special.split("");
 
-// var randomSpecial = specialArray[Math.floor(Math.random() * specialArray.length)];
-
-// console.log(randomSpecial);
-
-
-
-// // Object to store validation data
+// Array to store validation data
 var passwordCredentials = [];
-
 
 // Ask User for Criteria
 function generatePassword() {
   var numCharacters = window.prompt("Choose a password length between 8 and 128 characters.");
 
-  // passwordCredentials.characters = numCharacters;
-  console.log("numCharacters ", numCharacters);
-  console.log(typeof parseInt(numCharacters));
-
-  // check that its a number
-  while (isNaN(parseInt(numCharacters))) {
+  // Check that its a number
+  while (isNaN(numCharacters)) {
     alert("Entry must be a number");
     numCharacters = window.prompt("Choose a password length between 8 and 128 characters.");
   }
 
-  //check that number > 8 | < 128
+  // Check that number > 8 | < 128
   while ((numCharacters < 8 || numCharacters > 128)) {
     alert("Invalid Entry" + "\nPassword must be at least 8 characters, and no more than 128 characters.");
     numCharacters = window.prompt("Choose a password length between 8 and 128 characters.");
