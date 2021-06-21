@@ -137,7 +137,7 @@ function generatePassword() {
 
   console.log(passwordCredentials);
 
-  // COMBINATIONS OF 2 CHARACTER TYPES
+  // COMBINATIONS OF 2 CHARACTER TYPES **********************
   // Representation of lowercase and uppercase characters
   if (lowercaseValid && uppercaseValid && !numValid && !specialValid) {
     var password = alphaArray[Math.floor(Math.random() * alphaArray.length)] + alphaArrayUppercase[Math.floor(Math.random() * alphaArrayUppercase.length)];
@@ -213,6 +213,21 @@ function generatePassword() {
     var password = numArray[Math.floor(Math.random() * numArray.length)] + specialArray[Math.floor(Math.random() * specialArray.length)];
 
     for (let i = 0; i < (numCharacters - 2); i++) {
+      var randomSelection = passwordCredentials[Math.floor(Math.random() * passwordCredentials.length)];
+      password = password + randomSelection;
+    }
+
+    console.log(password);
+
+    return password;
+  }
+
+  // COMBINATIONS OF 3 CHARACTER TYPES **********************
+  // Representation of lower, upper, and number characters
+  if (lowercaseValid && uppercaseValid && numValid && !specialValid) {
+    var password = alphaArray[Math.floor(Math.random() * alphaArray.length)] + alphaArrayUppercase[Math.floor(Math.random() * alphaArrayUppercase.length)] + numArray[Math.floor(Math.random() * numArray.length)];
+
+    for (let i = 0; i < (numCharacters - 3); i++) {
       var randomSelection = passwordCredentials[Math.floor(Math.random() * passwordCredentials.length)];
       password = password + randomSelection;
     }
