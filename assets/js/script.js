@@ -137,7 +137,7 @@ function generatePassword() {
 
   console.log(passwordCredentials);
 
-  // Representation of lower and uppercase characters
+  // Representation of lowercase and uppercase characters
   if (lowercaseValid && uppercaseValid && !numValid && !specialValid) {
     var password = alphaArray[Math.floor(Math.random() * alphaArray.length)] + alphaArrayUppercase[Math.floor(Math.random() * alphaArrayUppercase.length)];
 
@@ -154,6 +154,20 @@ function generatePassword() {
   // Representation of lower and number characters
   if (lowercaseValid && !uppercaseValid && numValid && !specialValid) {
     var password = alphaArray[Math.floor(Math.random() * alphaArray.length)] + numArray[Math.floor(Math.random() * numArray.length)];
+
+    for (let i = 0; i < (numCharacters - 2); i++) {
+      var randomSelection = passwordCredentials[Math.floor(Math.random() * passwordCredentials.length)];
+      password = password + randomSelection;
+    }
+
+    console.log(password);
+
+    return password;
+  }
+
+  // Representation of lowercase and special characters
+  if (lowercaseValid && !uppercaseValid && !numValid && specialValid) {
+    var password = alphaArray[Math.floor(Math.random() * alphaArray.length)] + specialArray[Math.floor(Math.random() * specialArray.length)];
 
     for (let i = 0; i < (numCharacters - 2); i++) {
       var randomSelection = passwordCredentials[Math.floor(Math.random() * passwordCredentials.length)];
